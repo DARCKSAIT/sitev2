@@ -1,11 +1,11 @@
 [
   {
-    "title": "Exemple d'article",
+    "title": "Débuter l'exploration en 2024",
     "slug": "exemple-article",
     "category": "edition-semaine",
-    "tags": ["hebdo", "plex"],
-    "date_publication": "2024-01-01",
-    "excerpt": "Résumé court de l'article."
+    "tags": ["exploration", "debutant"],
+    "date_publication": "2024-05-20",
+    "excerpt": "Un guide rapide pour débuter l'exploration des signatures cosmiques."
   },
   {
     "title": "Analyse des prix PLEX",
