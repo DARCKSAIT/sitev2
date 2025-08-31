@@ -4,6 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Exemple d'article</title>
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <article>
+    <header class="bloc-contexte">
 <base href="/sitev2/" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -28,12 +35,18 @@
       <img src="image.webp" alt="Image d'illustration" />
       <p class="meta">Catégorie: édition-semaine | Date: 2024-01-01 | Auteur: Capsuleer</p>
     </header>
+    <section class="bloc-faits">
     <section>
       <h2>Faits vérifiés</h2>
       <ul>
         <li>Fait 1 avec source <a href="#">zKill</a></li>
       </ul>
     </section>
+    <section class="bloc-analyse">
+      <h2>Analyse</h2>
+      <p>Texte d'analyse avec hypothèses.</p>
+    </section>
+    <section class="bloc-impact">
     <section>
       <h2>Analyse</h2>
       <p>Texte d'analyse avec hypothèses.</p>
@@ -44,12 +57,15 @@
         <li>Point d'impact</li>
       </ul>
     </section>
+    <footer class="bloc-contexte">
     <footer>
       <p>Sources: <a href="#">Dotlan</a></p>
       <p>Corrections: aucune</p>
     </footer>
   </article>
 </main>
+<div id="footer"></div>
+<script src="../assets/script.js" data-base="../"></script>
 <footer>
   <p>&copy; 2024 Nova Vox Interstellar. Tous droits réservés.</p>
   <p><a href="mentions-legales.html">Mentions légales</a> | <a href="rss.xml">RSS</a></p>

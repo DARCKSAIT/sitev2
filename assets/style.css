@@ -27,6 +27,15 @@ h1 {
   font-size: 2rem;
   margin-top: 0;
 }
+.card-article {
+  background: #0f141b;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.card-article h2 {
+  margin-top: 0;
+}
 #hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -76,6 +85,11 @@ h1 {
 .bloc-faits,
 .bloc-analyse,
 .bloc-impact {
+  background: #0f141b;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
   padding: 1rem;
   margin: 1rem 0;
   background: #0f141b;
@@ -92,6 +106,8 @@ h1 {
   background: #21c7d9;
   color: #0a0d12;
   padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
   text-align: center;
   margin: 1rem 0;
 }

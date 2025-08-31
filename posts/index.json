@@ -1,5 +1,9 @@
 [
   {
+    "title": "Titre de l'article",
+    "slug": "exemple-article",
+    "category": "edition-semaine",
+    "tags": ["exemple"],
     "title": "Exemple d'article",
     "slug": "exemple-article",
     "category": "edition-semaine",
@@ -8,6 +12,12 @@
     "excerpt": "Résumé court de l'article."
   },
   {
+    "title": "Deuxième article",
+    "slug": "deuxieme-article",
+    "category": "analyse-financiere",
+    "tags": ["marche"],
+    "date_publication": "2024-02-01",
+    "excerpt": "Autre résumé d'article."
     "title": "Analyse des prix PLEX",
     "slug": "analyse-prix-plex",
     "category": "analyse-financiere",
