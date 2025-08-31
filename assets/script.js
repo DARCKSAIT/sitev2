@@ -76,31 +76,48 @@ document.addEventListener('DOMContentLoaded', () => {
       const categories = new Set(data.map(p => p.category));
       if (currentSection !== 'archives' && !categories.has(currentSection)) return;
 
-      const search = document.createElement('input');
-      search.type = 'search';
-      search.id = 'tag-filter';
-      search.placeholder = 'Filtrer par tag';
-      main.appendChild(search);
+      let search;
+      if (currentSection === 'archives') {
+        search = document.getElementById('archives-search');
+      } else {
+        search = document.createElement('input');
+        search.type = 'search';
+        search.id = 'tag-filter';
+        search.placeholder = 'Filtrer par tag';
+        main.appendChild(search);
+      }
 
       const list = document.createElement('div');
       list.id = 'posts-list';
       main.appendChild(list);
 
+      const noResults = document.createElement('p');
+      noResults.id = 'no-results';
+      noResults.textContent = 'Aucun résultat';
+      noResults.style.display = 'none';
+      main.appendChild(noResults);
+
       const posts = currentSection === 'archives' ? data : data.filter(p => p.category === currentSection);
       posts.forEach(p => {
         const card = createCardArticle(p);
         card.dataset.tags = p.tags.join(',');
+        card.dataset.search = `${p.title} ${p.category} ${(p.source || '')} ${(p.sources || []).join(' ')}`.toLowerCase();
         list.appendChild(card);
       });
 
       const cards = Array.from(list.children);
-      search.addEventListener('input', () => {
+      const filterCards = () => {
         const q = search.value.trim().toLowerCase();
+        let visible = 0;
         cards.forEach(card => {
-          const tags = card.dataset.tags.toLowerCase();
-          card.style.display = q === '' || tags.includes(q) ? '' : 'none';
+          const text = currentSection === 'archives' ? card.dataset.search : card.dataset.tags.toLowerCase();
+          const show = q === '' || text.includes(q);
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
         });
-      });
+        noResults.style.display = visible === 0 ? '' : 'none';
+      };
+      search.addEventListener('input', filterCards);
     })
     .catch(err => console.error('Erreur chargement index', err));
 });
