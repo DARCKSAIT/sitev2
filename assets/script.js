@@ -5,9 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const main = document.querySelector('main');
   if (!main) return;
 
-  fetch('../posts/index.json')
+  fetch(`${SITE_BASE}/posts/index.json`)
     .then(r => r.json())
     .then(data => {
+      const latestContainer = document.getElementById('latest-posts');
+      if (latestContainer) {
+        const latest = [...data]
+          .sort((a, b) => new Date(b.date_publication) - new Date(a.date_publication))
+          .slice(0, 6);
+        latest.forEach(p => {
+          const card = document.createElement('article');
+          card.className = 'post-card';
+          card.innerHTML = `<h3><a href="${SITE_BASE}/posts/${p.slug}.html">${p.title}</a></h3>\n<p>${p.excerpt}</p>\n<small>${p.date_publication}</small>`;
+          latestContainer.appendChild(card);
+        });
+      }
+
       const currentSection = window.location.pathname.split('/').filter(Boolean).pop();
       const categories = new Set(data.map(p => p.category));
       if (currentSection !== 'archives' && !categories.has(currentSection)) return;
@@ -27,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('article');
         card.className = 'post-card';
         card.dataset.tags = p.tags.join(',');
-        card.innerHTML = `<h2><a href="../posts/${p.slug}.html">${p.title}</a></h2>\n<p>${p.excerpt}</p>\n<small>${p.date_publication}</small>`;
+        card.innerHTML = `<h2><a href="${SITE_BASE}/posts/${p.slug}.html">${p.title}</a></h2>\n<p>${p.excerpt}</p>\n<small>${p.date_publication}</small>`;
         list.appendChild(card);
       });
 
