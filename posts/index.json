@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Exemple d'article",
+    "slug": "exemple-article",
+    "category": "edition-semaine",
+    "tags": ["hebdo", "plex"],
+    "date_publication": "2024-01-01",
+    "excerpt": "Résumé court de l'article."
+  },
+  {
+    "title": "Analyse des prix PLEX",
+    "slug": "analyse-prix-plex",
+    "category": "analyse-financiere",
+    "tags": ["economy", "plex"],
+    "date_publication": "2024-02-10",
+    "excerpt": "Synthèse des fluctuations PLEX."
+  }
+]
