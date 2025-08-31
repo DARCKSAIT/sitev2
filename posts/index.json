@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Titre de l'article",
+    "slug": "exemple-article",
+    "category": "edition-semaine",
+    "tags": ["exemple"],
+    "date_publication": "2024-01-01",
+    "excerpt": "Résumé court de l'article."
+  },
+  {
+    "title": "Deuxième article",
+    "slug": "deuxieme-article",
+    "category": "analyse-financiere",
+    "tags": ["marche"],
+    "date_publication": "2024-02-01",
+    "excerpt": "Autre résumé d'article."
+  }
+]
